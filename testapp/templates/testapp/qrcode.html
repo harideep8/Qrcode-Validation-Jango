@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="{%url 'validate_otp'%}" method="post">
+      {%csrf_token%}
+
+    <table align="center" border="2">
+      <tr>
+        <th><img src="{% static 'qrimages/hari.jpg'%}" alt=""></th>
+      </tr>
+      <tr>
+        <th><input type="password" name="otp" placeholder="OTP" required ></th>
+      </tr>
+      <tr>
+        <th><button type="submit" >Submit</button></th>
+      </tr>
+    </table>
+    </form>
+  </body>
+  {%if message%}
+  {{message}}
+  {%endif%}
+</html>
